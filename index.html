@@ -119,6 +119,13 @@
 
       document.body.appendChild(script);
 
+      var receivedData;
+      window.addEventListener('message', function (event) {
+          receivedData = event.data;
+          // alert(receivedData);
+          unityFunction(receivedData);
+      });
+
       function unityFunction(message) {
           if (myGameInstance != null && receivedData != null) {
               console.log(receivedData);
